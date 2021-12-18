@@ -11,6 +11,8 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -29,7 +31,6 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         cargarArchivo();
         actualizarArbol();
         actualizarcombobox();
-        
     }
 
     /**
@@ -59,6 +60,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
@@ -121,34 +124,40 @@ public class Principal extends javax.swing.JFrame implements Runnable {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(vidajak, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
-                    .addComponent(vidaerrol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(vidajak, javax.swing.GroupLayout.DEFAULT_SIZE, 211, Short.MAX_VALUE)
+                            .addComponent(vidaerrol, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel13)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel12)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -181,7 +190,11 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     .addComponent(jLabel13)
                     .addComponent(jLabel15)
                     .addComponent(jLabel17))
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel19)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                .addComponent(jLabel18)
+                .addContainerGap())
         );
 
         jTabbedPane1.addTab("Juego", jPanel1);
@@ -401,7 +414,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        pausa=true;
+        if (reanudar){
+            jButton2.setText("Pausar Partida");
+            pausa=false;
+        }else{
+            pausa=true;
+            jButton2.setText("Reanudar Partida");
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
@@ -455,6 +474,8 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -478,10 +499,13 @@ public class Principal extends javax.swing.JFrame implements Runnable {
     // End of variables declaration//GEN-END:variables
     ArrayList <Carros> carros= new ArrayList();
     int pos;
+    boolean reanudar;
     Carros malvado;
     Carros carrodejack;
     DefaultMutableTreeNode raiz;
     DefaultTreeModel modelo;
+    Jugadores jak = new Jugadores("Jak",5000,5000);
+    Jugadores ciber = new Jugadores("Ciber Errol",500,30000);
     public void actualizarArbol(){
         raiz = new DefaultMutableTreeNode ("Carros");
         modelo = new DefaultTreeModel (raiz);
@@ -557,6 +581,10 @@ public class Principal extends javax.swing.JFrame implements Runnable {
         jLabel15.setText(String.valueOf(carrodejack.getVida()));
         jLabel16.setText(String.valueOf(malvado.getAtaque()));
         jLabel17.setText(String.valueOf(malvado.getVida()));
+        jLabel18.setText(String.valueOf("Batalla Inicial"));
+        jLabel19.setText(String.valueOf("Carro de jack VS. Carro malvado de Ciber Errol"));
+        int contador =0;
+        boolean bfinal=true;
         while (vivo){
             System.out.print("");
             try{
@@ -564,21 +592,64 @@ public class Principal extends javax.swing.JFrame implements Runnable {
                     vidaerrol.setValue(vidaerrol.getValue()-carrodejack.getAtaque());
                     jLabel17.setText(String.valueOf(vidaerrol.getValue()));
                     if (vidaerrol.getValue()<=0){
-                        JOptionPane.showMessageDialog(this, "Has ganado");
+                        
                         vivo=false;
                     }
-                    if (vivo==true){
-                        vidajak.setValue(vidajak.getValue()-malvado.getAtaque());
-                        jLabel15.setText(String.valueOf(vidajak.getValue()));
-                        if (vidajak.getValue()<=0){
-                        JOptionPane.showMessageDialog(this, "Has Perdido");
-                        vivo=false;
+                    if (contador ==1){
+                        if (vivo==true){
+                            vidajak.setValue(vidajak.getValue()-malvado.getAtaque());
+                            jLabel15.setText(String.valueOf(vidajak.getValue()));
+                            if (vidajak.getValue()<=0){
+                            JOptionPane.showMessageDialog(this, "Has Perdido");
+                            bfinal =false;
+                            vivo=false;
+                            }
                         }
+                        contador=0;
                     }
+                    contador++;
                     Thread.sleep(500);
                 }
             }catch(Exception e){
                 e.printStackTrace();
+            }
+        }
+        boolean vivo2=true;
+        int contador2=0;
+        
+        if (bfinal){
+            jLabel14.setText(String.valueOf(jak.getAtaque()));
+            jLabel15.setText(String.valueOf(jak.getVida()));
+            jLabel16.setText(String.valueOf(ciber.getAtaque()));
+            jLabel17.setText(String.valueOf(ciber.getVida()));
+            jLabel18.setText(String.valueOf("Batalla Final"));
+            jLabel19.setText(String.valueOf("Jak VS. Errol"));
+            while (vivo2){
+                if (pausa==false){
+                    ciber.setVida(ciber.getVida()-jak.getAtaque());
+                    jLabel17.setText(String.valueOf(ciber.getVida()));
+                    if (ciber.getVida()<=0){
+                        JOptionPane.showMessageDialog(this, "Has ganado");
+                        vivo2=false;
+                    }
+                    if (vivo2){
+                        if (contador2 ==1){
+                            jak.setVida(jak.getVida()-ciber.getAtaque());
+                            jLabel15.setText(String.valueOf(jak.getVida()));
+                            if (jak.getVida()<=0){
+                                JOptionPane.showMessageDialog(this, "Has perdido");
+                                vivo2=false;
+                            }
+                            contador2 =0;
+                        }
+                        contador2++;
+                    }
+                    try {
+                        Thread.sleep(500);
+                    } catch (InterruptedException ex) {
+                        Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
             }
         }
     }
